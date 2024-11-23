@@ -14,6 +14,7 @@ pipeline {
             steps {
                 echo 'Deploying to production...'
                 // Add deployment steps here
+            }
         }        
     }
 }
