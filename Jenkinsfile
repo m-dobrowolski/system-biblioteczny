@@ -7,6 +7,13 @@ pipeline {
             }
         }
 
+        stage('Debug') {
+            steps {
+                sh 'env | grep BRANCH'
+                echo "Detected branch: ${env.BRANCH_NAME}"
+            }
+        }
+
         stage('Deploy'){
             when {
                 branch 'master'
