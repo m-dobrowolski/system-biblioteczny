@@ -13,14 +13,6 @@ pipeline {
                 sh 'mvn -B -DskipTests clean package'
             }
         }
-
-        stage('Debug') {
-            steps {
-                sh 'env | grep BRANCH'
-                echo "Detected branch: ${env.BRANCH_NAME}"
-            }
-        }
-
         stage('Deploy'){
             when {
                 expression {
